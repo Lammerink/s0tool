@@ -4,25 +4,28 @@
 # © Huizebruin.nl
 substitutions:
   name: s0tool-s0-watermeter
+  board: esp32-c3-devkitm-1
+  platform: ESP32
+  gpio_pin: 5
 
 esphome:
   name: ${name}
   name_add_mac_suffix: true
   comment: '${device_description}'
   project:
-    name: "huizebruin.${name}"
+    name: "lammerink.${name}"
     version: "${project_version}"
   min_version: 2024.6.0
-esp8266:
-  board:  d1_mini
+  platform: ${platform}
+  board:  ${board}
   restore_from_flash: true  
 
 dashboard_import:
-  package_import_url: github://huizebruin/s0tool/esphome/s0-watermeter.yaml
+  package_import_url: github://lammerink/s0tool/esphome/s0-watermeter.yaml
 
 packages:
   remote_package:
-    url: https://github.com/huizebruin/s0tool/
+    url: https://github.com/lammerink/s0tool/
     ref: main
     files:
       - esphome/components/basis.yaml
