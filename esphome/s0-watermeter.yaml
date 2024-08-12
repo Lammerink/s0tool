@@ -5,6 +5,7 @@
 substitutions:
   name: s0tool-s0-watermeter
   board: esp32-c3-devkitm-1
+  platform: ESP32
   gpio_pin: 5
 
 esphome:
@@ -15,7 +16,7 @@ esphome:
     name: "lammerink.${name}"
     version: "${project_version}"
   min_version: 2024.6.0
-esp8266:
+  platform: ${platform}
   board:  ${board}
   restore_from_flash: true  
 
