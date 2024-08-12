@@ -5,7 +5,7 @@
 substitutions:
   name: s0tool-s0-watermeter
   board: esp32-c3-devkitm-1
-  gpio_pin: GPIO5
+  gpio_pin: 5
 
 esphome:
   name: ${name}
